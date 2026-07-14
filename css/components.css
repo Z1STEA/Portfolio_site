@@ -3,22 +3,19 @@
 ===================================================== */
 
 .button {
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
 
-    text-decoration: none;
+    padding: 16px 34px;
 
     border-radius: var(--radius-full);
 
+    font-weight: 600;
+
     transition: var(--transition);
 
-    padding: 16px 30px;
-
-    font-weight: 600;
+    text-decoration: none;
 }
 
 .button-primary {
@@ -26,18 +23,31 @@
     background: var(--accent);
 
     color: white;
+
+    border: none;
 }
 
 .button-primary:hover {
 
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+
+    filter: brightness(1.05);
 }
 
 .button-secondary {
 
-    border: 1px solid var(--border);
+    background:white;
 
-    color: var(--primary);
+    color:var(--primary);
 
-    background: transparent;
+    border:1px solid var(--border);
+
+}
+
+.button-secondary:hover{
+
+    transform:translateY(-3px);
+
+    background:#fafafa;
+
 }

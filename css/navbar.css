@@ -3,17 +3,23 @@
 ===================================================== */
 
 .navbar {
-    padding: 32px 0;
+    padding: 40px 0;
 }
 
 /* Logo */
 
-.navbar-brand {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-text);
+.navbar-brand{
 
-    text-decoration: none;
+    font-size:30px;
+
+    font-weight:700;
+
+    letter-spacing:-1px;
+
+    color:var(--primary);
+
+    text-decoration:none;
+
 }
 
 /* Navigation */
@@ -21,7 +27,7 @@
 .navbar-nav {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 48px;
 }
 
 /* Links */

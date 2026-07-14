@@ -2,58 +2,80 @@
    HERO
 ===================================================== */
 
-.hero {
-    min-height: 100vh;
+.hero{
 
-    display: flex;
-    align-items: center;
+    min-height:calc(100vh - 120px);
+
+    display:flex;
+
+    align-items:center;
+
 }
 
 /* Hero Label */
 
-.eyebrow {
-    color: var(--secondary);
+.eyebrow{
 
-    letter-spacing: 0.2rem;
+    margin-bottom:24px;
 
-    margin-bottom: 20px;
+    color:var(--secondary);
+
+    letter-spacing:4px;
+
+    font-size:14px;
+
 }
 
 /* Hero Title */
 
-.hero-title {
+.hero-title{
 
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size:clamp(4.5rem,8vw,7rem);
 
-    font-weight: 700;
+    line-height:.92;
 
-    line-height: 0.9;
+    font-weight:700;
 
-    margin-bottom: 24px;
+    margin-bottom:24px;
+
 }
 
-/* Description */
+/* Hero Description */
 
-.hero-description {
+.hero-description{
 
-    font-size: 22px;
+    max-width:620px;
 
-    line-height: 1.8;
+    font-size:22px;
 
-    color: var(--secondary);
+    line-height:1.8;
 
-    max-width: 580px;
+    color:var(--secondary);
+
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+    margin-top:48px;
+
+    display:flex;
+
+    gap:20px;
+
 }
 
 /* Artwork */
 
-.hero-visual {
+.hero-visual{
 
-    height: 520px;
+    height:520px;
 
-    border-radius: var(--radius-xl);
+    border-radius:var(--radius-xl);
 
-    background: var(--surface);
+    background:white;
 
-    border: 1px solid var(--border);
+    border:1px solid var(--border);
+
 }
