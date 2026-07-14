@@ -1,0 +1,59 @@
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Hero Label */
+
+.eyebrow {
+    color: var(--secondary);
+
+    letter-spacing: 0.2rem;
+
+    margin-bottom: 20px;
+}
+
+/* Hero Title */
+
+.hero-title {
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+    font-weight: 700;
+
+    line-height: 0.9;
+
+    margin-bottom: 24px;
+}
+
+/* Description */
+
+.hero-description {
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: var(--secondary);
+
+    max-width: 580px;
+}
+
+/* Artwork */
+
+.hero-visual {
+
+    height: 520px;
+
+    border-radius: var(--radius-xl);
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+}

@@ -1,0 +1,43 @@
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    border-radius: var(--radius-full);
+
+    transition: var(--transition);
+
+    padding: 16px 30px;
+
+    font-weight: 600;
+}
+
+.button-primary {
+
+    background: var(--accent);
+
+    color: white;
+}
+
+.button-primary:hover {
+
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+
+    border: 1px solid var(--border);
+
+    color: var(--primary);
+
+    background: transparent;
+}

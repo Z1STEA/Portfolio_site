@@ -1,95 +1,10 @@
-/* =====================================================
-   GLOBAL STYLES
-===================================================== */
-
-body {
-    background-color: var(--bg);
-    color: var(--primary);
-
-    font-family: "Inter", Arial, sans-serif;
-
-    margin: 0;
-    padding: 0;
-
-    overflow-x: hidden;
-}
-
-
-/* =====================================================
-   HERO SECTION
-===================================================== */
-
-.hero h1 {
-    font-size: clamp(3.5rem, 8vw, 6rem);
-    line-height: 0.95;
-}
-
-
-/* =====================================================
-   HERO SUBTITLE
-===================================================== */
-
-.eyebrow {
-    color: var(--secondary);
-
-    letter-spacing: 0.2rem;
-}
-
-
-/* =====================================================
-   HERO ARTWORK PLACEHOLDER
-===================================================== */
-
-.hero-card {
-    height: 420px;
-
-    background: #FFFFFF;
-
-    border: 1px solid var(--border);
-    border-radius: 24px;
-}
-
-
-/* =====================================================
-   PRIMARY BUTTON
-===================================================== */
-
-.btn-primary-custom {
-    background-color: var(--accent);
-
-    color: #FFFFFF;
-
-    border: none;
-    border-radius: 999px;
-
-    padding: 0.8rem 1.5rem;
-
-    transition: 0.3s ease;
-}
-
-.btn-primary-custom:hover {
-
-}
-
-
-/* =====================================================
-   OUTLINE BUTTON
-===================================================== */
-
-.btn-outline-custom {
-
-    background: transparent;
-
-    color: var(--primary);
-
-    border: 1px solid var(--border);
-    border-radius: 999px;
-
-    padding: 0.8rem 1.5rem;
-
-    transition: 0.3s ease;
-}
-
-.btn-outline-custom:hover {
-
-}
+@import url("variables.css");
+@import url("reset.css");
+@import url("navbar.css");
+@import url("hero.css");
+@import url("projects.css");
+@import url("about.css");
+@import url("footer.css");
+@import url("components.css");
+@import url("animations.css");
+@import url("responsive.css");

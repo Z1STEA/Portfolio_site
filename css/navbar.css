@@ -1,0 +1,42 @@
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    padding: 32px 0;
+}
+
+/* Logo */
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+
+    text-decoration: none;
+}
+
+/* Navigation */
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Links */
+
+.navbar-link {
+    color: var(--color-text);
+
+    font-size: 16px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+.navbar-link:hover {
+    color: var(--color-accent);
+}
