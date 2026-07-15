@@ -18,6 +18,12 @@
     text-decoration: none;
 }
 
+.button:hover {
+    transform: translateY(-2px);
+
+    transition: 0.25s ease;
+}
+
 .button-primary {
 
     background: var(--accent);
