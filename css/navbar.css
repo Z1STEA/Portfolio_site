@@ -3,23 +3,31 @@
 ===================================================== */
 
 .navbar {
-    padding: 40px 0;
+    padding: 28px 0;
 }
 
-/* Logo */
+/* ==========================================
+   Logo
+========================================== */
 
-.navbar-brand{
+.navbar-brand {
+    display: flex;
+    align-items: center;
 
-    font-size:30px;
+    text-decoration: none;
+}
 
-    font-weight:700;
+.logo {
+    width: 44px;
+    height: 44px;
 
-    letter-spacing:-1px;
+    object-fit: contain;
 
-    color:var(--primary);
+    transition: transform 0.3s ease;
+}
 
-    text-decoration:none;
-
+.logo:hover {
+    transform: scale(1.05);
 }
 
 /* Navigation */
@@ -33,7 +41,7 @@
 /* Links */
 
 .navbar-link {
-    color: var(--color-text);
+    color: var(--primary);
 
     font-size: 16px;
     font-weight: 500;
@@ -44,5 +52,15 @@
 }
 
 .navbar-link:hover {
-    color: var(--color-accent);
+    color: var(--accent);
+
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   Resume Button
+========================================== */
+
+.navbar .button {
+    padding: 14px 28px;
 }
