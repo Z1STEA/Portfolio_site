@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <!-- ==========================================
          Basic Meta
     =========================================== -->
@@ -20,6 +21,11 @@
     =========================================== -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
 </head>
 
 <body>
@@ -27,35 +33,36 @@
     <!-- ==========================================
          Navbar
     =========================================== -->
-    <nav class="navbar navbar-expand-lg py-3">
+    <nav class="navbar navbar-expand-lg">
 
         <div class="container">
 
             <!-- Logo -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
+
                 <img
-                    src="images\Logo B.png"
+                    src="images/Logo B.png"
                     alt="Wei Han Logo"
-                    class="logo"
-                >
+                    class="logo">
+
             </a>
 
-            <!-- Navigation Links -->
+            <!-- Navigation -->
             <div class="ms-auto d-flex gap-4 align-items-center">
 
-                <a href="#" class="navbar-link">
+                <a href="index.html" class="navbar-link active">
                     Home
                 </a>
 
-                <a href="#" class="navbar-link">
+                <a href="projects.html" class="navbar-link">
                     Projects
                 </a>
 
-                <a href="#" class="navbar-link">
+                <a href="about.html" class="navbar-link">
                     About
                 </a>
 
-                <a href="#" class="navbar-link">
+                <a href="contact.html" class="navbar-link">
                     Contact
                 </a>
 
@@ -73,48 +80,56 @@
     <!-- ==========================================
          Hero Section
     =========================================== -->
-    <section class="hero container min-vh-100 d-flex align-items-center">
+    <section class="hero">
 
-        <div class="row align-items-center">
+        <div class="container">
 
-            <!-- Left Side -->
-            <div class="col-lg-7">
+            <div class="row align-items-center">
 
-                <p class="eyebrow">
-                    FULL STACK DEVELOPMENT STUDENT
-                </p>
+                <!-- ==========================================
+                     Left Content
+                =========================================== -->
+                <div class="col-lg-7">
 
-                <h1 class="hero-title">
-                    Hi, I'm <br>
-                    Wei Han.
-                </h1>
+                    <p class="eyebrow">
+                        FULL STACK DEVELOPMENT STUDENT
+                    </p>
 
-                <p class="hero-description">
-                    A Full Stack Development student who enjoys creating clean,
-                    responsive, and modern web experiences with thoughtful UI design.
-                </p>
+                    <h1 class="hero-title">
+                        Hi, I'm <br>
+                        Wei Han.
+                    </h1>
 
-                <!-- Hero Buttons -->
-                <div class="hero-buttons">
+                    <p class="hero-description">
+                        A Full Stack Development student who enjoys creating
+                        clean, responsive and modern web experiences with
+                        thoughtful UI design.
+                    </p>
 
-                    <button class="btn btn-primary-custom me-2">
-                        View Projects
-                    </button>
+                    <div class="hero-buttons">
 
-                    <button class="button button-secondary">
-                        Contact Me
-                    </button>
+                        <button class="button button-primary">
+                            View Projects
+                        </button>
+
+                        <button class="button button-secondary">
+                            Contact Me
+                        </button>
+
+                    </div>
 
                 </div>
 
-            </div>
+                <!-- ==========================================
+                     Right Content
+                =========================================== -->
+                <div class="col-lg-5 d-flex justify-content-center">
 
-            <!-- Right Side -->
-            <div class="col-lg-5 d-flex justify-content-center">
+                    <div class="hero-visual">
 
-                <div class="hero-visual d-flex justify-content-center align-items-center">
+                        <!-- Hero illustration goes here -->
 
-                    <!-- Hero artwork will go here -->
+                    </div>
 
                 </div>
 
@@ -129,9 +144,7 @@
     =========================================== -->
     <footer class="container py-5 text-center">
 
-        <p>
-            © 2026 Wei Han
-        </p>
+        <p>© 2026 Wei Han</p>
 
     </footer>
 
