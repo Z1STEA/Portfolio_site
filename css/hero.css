@@ -30,13 +30,14 @@
 
 .hero-title{
 
-    font-size:clamp(4.5rem,8vw,7rem);
+    margin-top:16px;
+    margin-bottom:32px;
 
-    line-height:.92;
+    font-size:clamp(5rem,8vw,7rem);
 
-    font-weight:700;
+    line-height:.9;
 
-    margin-bottom:24px;
+    font-weight:800;
 
 }
 
@@ -92,6 +93,7 @@
     width: 100%;
 }
 
-.hero .col-lg-7 {
-    padding-right: 48px;
+.hero .col-lg-7{
+    padding-right:90px;
+    padding-left:30px;
 }
