@@ -6,6 +6,10 @@
    path to the media array for that project.
    ========================================================= */
 
+// If the React CDN is blocked, keep the static fallback in index.html visible.
+if (!window.React || !window.ReactDOM) {
+  console.warn("React/ReactDOM did not load. Showing the static portfolio preview.");
+} else {
 const h = React.createElement;
 
 /* EDIT PROJECTS HERE
@@ -249,3 +253,4 @@ function App() {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(h(App));
+\n} // End React/ReactDOM availability check.\n

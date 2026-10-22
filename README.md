@@ -42,3 +42,7 @@ Videos play with controls in the popup. Add as many photo/video entries as you w
 
 ## Important
 The project descriptions in this starter are editable example text. Update them to accurately describe your real contribution and tools. Change `your.email@example.com` in `script.js` to your contact email.
+
+
+## If the page looks blank
+This updated version includes a static fallback so the portfolio content remains visible if React cannot load. Interactive project popups require an internet connection because React and ReactDOM are loaded from a CDN. If you open `index.html` without internet, the fallback layout should still be visible.
