@@ -173,6 +173,14 @@ function ProjectModal({ project, onClose }) {
   );
 }
 
+function scrollProjects(direction) {
+  const track = document.getElementById("project-carousel-track");
+  if (!track) return;
+  const card = track.querySelector(".project-card");
+  const amount = card ? card.getBoundingClientRect().width + 20 : track.clientWidth * 0.8;
+  track.scrollBy({ left: direction * amount, behavior: "smooth" });
+}
+
 function App() {
   const [activeProject, setActiveProject] = React.useState(null);
   const currentYear = new Date().getFullYear();
@@ -206,10 +214,17 @@ function App() {
       h("section", { className: "section container", id: "work" },
         h("div", { className: "section-heading" },
           h("div", null, h("div", { className: "kicker" }, "Selected work / 2023—2026"), h("h2", null, "Projects with purpose.")),
-          h("p", { className: "section-note" }, "Select any project card to read the full description and view its photos or videos.")
+          h("div", { className: "carousel-controls" },
+            h("span", { className: "carousel-progress", id: "carousel-progress" }, `01 — ${String(PROJECTS.length).padStart(2, "0")}`),
+            h("button", { className: "carousel-button", type: "button", "aria-label": "Previous projects", onClick: () => scrollProjects(-1) }, "←"),
+            h("button", { className: "carousel-button", type: "button", "aria-label": "Next projects", onClick: () => scrollProjects(1) }, "→")
+          )
         ),
-        h("div", { className: "project-grid" },
-          PROJECTS.map((project) => h(ProjectCard, { key: project.id, project, onOpen: setActiveProject }))
+        h("p", { className: "section-note", style: { marginBottom: "20px" } }, "Swipe, scroll, or use the arrows. Select a project card to open its full case study."),
+        h("div", { className: "project-carousel" },
+          h("div", { className: "project-grid", id: "project-carousel-track" },
+            PROJECTS.map((project) => h(ProjectCard, { key: project.id, project, onOpen: setActiveProject }))
+          )
         )
       ),
 

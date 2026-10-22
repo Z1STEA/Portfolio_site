@@ -46,3 +46,12 @@ The project descriptions in this starter are editable example text. Update them 
 
 ## If the page looks blank
 This updated version includes a static fallback so the portfolio content remains visible if React cannot load. Interactive project popups require an internet connection because React and ReactDOM are loaded from a CDN. If you open `index.html` without internet, the fallback layout should still be visible.
+
+
+## Latest design update
+- Acid-lime green and black Marathon-inspired palette.
+- Bright green/black header to make the logo easier to see.
+- Horizontal project carousel with arrow buttons and swipe/scroll support.
+- Animated hero title, hover feedback, visible keyboard focus, and reduced-motion support.
+
+If the logo still does not show, check that `assets/logo-w.png` exists. The header also shows a WH text fallback if the image cannot load.
