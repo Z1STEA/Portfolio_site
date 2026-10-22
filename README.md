@@ -1,39 +1,40 @@
-# Wei Han® — React UI/UX Portfolio
+# Wei Han — Editable HTML Portfolio
 
-A cyber-inspired, non-minimalist portfolio built with React + Vite.
+This portfolio uses plain HTML, CSS, and JavaScript. It does not need React, npm, or a build step.
 
-## Files
-- `src/main.jsx` — React components and editable portfolio content
-- `src/styles.css` — layout, colors, responsive design, animations
-- `index.html` — document metadata
-- `public/assets/` — optional images and logo assets
-- `vite.config.js` — Vite and GitHub Pages base path
-- `package.json` — scripts and dependencies
+## Preview it
+Open `index.html` in your browser, or use the VS Code Live Server extension.
 
-## Run on Windows
-Open this folder in VS Code, open Terminal, and run:
+## Edit text
+Open `index.html`. Sections are marked with comments:
+- `HERO / INTRO`: headline and intro
+- `WORK / PROJECT CARDS`: project names, categories, descriptions, and images
+- `ABOUT`: biography
+- `CONTACT`: email link
 
-```powershell
-npm install
-npm run dev
-```
+## Add or change project images
+1. Put your image files in `assets/projects/`.
+2. In the matching work card in `index.html`, change or add image tags:
 
-Open the local URL Vite prints, usually `http://localhost:5173`.
+   ```html
+   <div class="work-gallery">
+     <img src="assets/projects/my-project-cover.png" alt="Project cover">
+     <img src="assets/projects/my-project-screen-2.png" alt="Second project screen">
+     <img src="assets/projects/my-project-detail.png" alt="Project detail">
+   </div>
+   ```
 
-## Edit easily
-In `src/main.jsx`:
-- Edit the `projects` array near the top for names, descriptions, tags, outcomes, and case-study steps.
-- Change `CONTACT_EMAIL` to your real email.
-- Change `SOCIAL_LINKS` to your profile URLs.
-- Update the About component text and skills.
+3. You can use one image or multiple images in the same card. The gallery layout adapts automatically.
+4. Copy a whole `<article class="work-card"> ... </article>` block to create another project card. Update its number, type, title, description, image paths, and link.
 
-In `src/styles.css`, edit colors, typography, spacing, animation, and responsive layout. Main color variables are near the top: `--lime`, `--purple`, and `--orange`.
+## Customize design
+Edit `style.css`. The main colors are at the top in `:root`:
+- `--background`
+- `--section-background`
+- `--text`
+- `--muted-text`
+- `--accent`
+- `--border`
 
-## Deploy to GitHub Pages
-1. Create a repository, for example `wei-han-portfolio`.
-2. In `vite.config.js`, set `base: '/wei-han-portfolio/'` to your repo name. If the repo is `YOUR-USERNAME.github.io`, use `base: '/'`.
-3. Push the project to GitHub.
-4. Run `npm install` and `npm run deploy`.
-5. On GitHub, open **Settings → Pages**, choose **Deploy from a branch**, select `gh-pages` and `/(root)`, then save.
-
-The case study content is starter copy. Replace it with your real research, process artifacts, and verified outcomes before using it professionally.
+## Contact email
+In `index.html`, replace `your.email@example.com` in the `mailto:` link with your real email address.

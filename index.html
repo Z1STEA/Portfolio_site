@@ -1,17 +1,168 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#090b10" />
-    <meta name="description" content="Wei Han — UI/UX designer shaping expressive, human-centered digital experiences." />
-    <title>Wei Han® — Interface Explorer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101712">
+  <meta name="description" content="Wei Han's design and development portfolio.">
+  <title>Wei Han — Portfolio</title>
+
+  <!-- Main styles: change colors, spacing, and layout in style.css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ==================== NAVIGATION ====================
+       Edit the logo path and site name here. Navigation links point to section IDs below. -->
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <!-- Replace this file with your own logo, or remove the img tag if you prefer text only. -->
+      <img class="brand-logo" src="assets/Logo W.png" alt="Wei Han logo">
+      <span>WEI HAN<span class="accent">.</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a class="nav-contact" href="#contact">Contact ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================== HERO / INTRO ====================
+         Edit the headline and intro text directly below. -->
+    <section class="hero section-wrap" id="home">
+      <p class="eyebrow"><span class="status-dot"></span> DESIGNER &amp; DEVELOPER</p>
+      <h1>Making digital<br>things <span class="accent">feel simple.</span></h1>
+      <p class="hero-description">
+        Hi, I'm Wei Han. I create thoughtful digital experiences by combining
+        clean design, useful ideas, and simple technology.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+        <a class="button button-outline" href="#about">A little about me</a>
+      </div>
+
+      <div class="hero-meta">
+        <span>PORTFOLIO / 2026</span>
+        <span>DESIGN · INTERACTION · CODE</span>
+      </div>
+    </section>
+
+    <!-- ==================== WORK / PROJECT CARDS ====================
+         To add another project:
+         1. Copy one complete <article class="work-card">...</article> block.
+         2. Change the title, type, description, and image paths.
+         3. For multiple images, add more <img> tags inside .work-gallery.
+         4. For one image only, delete the extra img tags.
+         Each project card can have its own number of images. -->
+    <section class="work-section section-wrap" id="work">
+      <div class="section-title-row">
+        <div>
+          <p class="eyebrow">SELECTED WORK</p>
+          <h2>Projects<span class="accent">.</span></h2>
+        </div>
+        <p class="section-intro">A collection of projects, experiments, and things I've learned along the way.</p>
+      </div>
+
+      <div class="work-grid">
+        <!-- PROJECT CARD 01: GreenPlan
+             Edit the text below. Replace image filenames with your own images inside assets/projects/.
+             Add or remove <img> tags to show multiple images in this card. -->
+        <article class="work-card">
+          <div class="work-gallery">
+            <img src="assets/greenplan-cover.png" alt="GreenPlan project cover">
+            <img src="assets/greenplan-mobile.png" alt="GreenPlan mobile screens">
+            <!-- Example extra image: uncomment and replace filename to add a third image.
+            <img src="assets/projects/greenplan-detail-3.png" alt="GreenPlan additional screen">
+            -->
+          </div>
+          <div class="work-card-content">
+            <div class="work-card-topline"><span class="work-number">01</span><span class="work-type">UI/UX DESIGN · MOBILE APP</span></div>
+            <h3>GreenPlan</h3>
+            <p>A digital experience designed to encourage greener everyday habits through a clear and approachable mobile interface.</p>
+            <a class="work-link" href="#contact">Ask me about this project <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <!-- PROJECT CARD 02: RP Helper
+             Replace the example images with screenshots from your RP Helper project.
+             Keep one image or add several <img> tags in .work-gallery. -->
+        <article class="work-card">
+          <div class="work-gallery">
+            <!-- Replace these image paths with your own RP Helper screenshots.
+                 Example: <img src="assets/projects/rp-helper-home.png" alt="RP Helper home screen"> -->
+            <div class="image-placeholder">
+              <span class="placeholder-icon">＋</span>
+              <strong>Add RP Helper images here</strong>
+              <small>Put image files in assets/projects/ and update the image paths in index.html.</small>
+            </div>
+            <!-- Example for multiple images — copy this line and update the filename:
+            <img src="assets/projects/rp-helper-screen-2.png" alt="RP Helper second screen">
+            -->
+          </div>
+          <div class="work-card-content">
+            <div class="work-card-topline"><span class="work-number">02</span><span class="work-type">WEB APP · PRODUCT DESIGN</span></div>
+            <h3>RP Helper</h3>
+            <p>A helper tool concept designed to make common student tasks and information easier to access.</p>
+            <a class="work-link" href="#contact">Ask me about this project <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <!-- PROJECT CARD 03: Add a new project
+             Duplicate this entire article to add a new work card.
+             Use as many images as you want inside .work-gallery. -->
+        <article class="work-card">
+          <div class="work-gallery">
+            <div class="image-placeholder">
+              <span class="placeholder-icon">＋</span>
+              <strong>Add your project images here</strong>
+              <small>Replace this placeholder with one or more image tags.</small>
+            </div>
+          </div>
+          <div class="work-card-content">
+            <div class="work-card-topline"><span class="work-number">03</span><span class="work-type">PROJECT TYPE</span></div>
+            <h3>Your Next Project</h3>
+            <p>Replace this text with a short description of your project, your role, and what you made.</p>
+            <a class="work-link" href="#contact">Ask me about this project <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ====================
+         Replace this with your own background, interests, skills, or process. -->
+    <section class="about-section section-wrap" id="about">
+      <p class="eyebrow">A LITTLE ABOUT ME</p>
+      <div class="about-grid">
+        <h2>Curious by nature.<br><span class="accent">Creative by design.</span></h2>
+        <div class="about-copy">
+          <p>I enjoy exploring how design and technology can solve everyday problems. My process is simple: understand the user, try ideas, and keep improving the details.</p>
+          <p>This portfolio is a work in progress, and I'm always learning something new.</p>
+          <!-- Add skills if you want, for example:
+          <p class="skills-list">UI/UX Design · HTML/CSS · Prototyping · Research</p>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ====================
+         Replace the example email address with your real email. -->
+    <section class="contact-section section-wrap" id="contact">
+      <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+      <h2>Let's make something<br><span class="accent">good together.</span></h2>
+      <a class="button button-primary" href="mailto:your.email@example.com">Get in touch <span aria-hidden="true">↗</span></a>
+      <p class="small-note">Remember to replace <code>your.email@example.com</code> with your own email.</p>
+    </section>
+  </main>
+
+  <!-- Footer year is filled automatically by script.js -->
+  <footer class="site-footer">
+    <span>© <span id="current-year"></span> Wei Han</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- Small JavaScript only; the website does not need React or npm. -->
+  <script src="script.js"></script>
+</body>
 </html>
