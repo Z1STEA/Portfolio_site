@@ -2,3 +2,56 @@
 @media(max-width:1000px){.topbar{padding:0 24px}.system-status{display:none}.section-wrap{width:calc(100% - 48px)}.hero-layout{min-height:520px;grid-template-columns:1fr .85fr}.hero-art{height:420px}.planet-main{width:170px;height:170px}.orbit-one{width:290px}.orbit-two{height:220px}.orbit-three{height:290px}.art-sticker{right:7%;top:23%}.project-visual{height:270px}.about-layout{gap:6%}}
 @media(max-width:700px){.section-wrap{width:calc(100% - 36px)}.topbar{height:65px;padding:0 18px}.mobile-menu{display:block}.nav-links{display:none;position:absolute;top:64px;left:0;right:0;padding:18px;background:#0b0d13;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:5px}.nav-links.open{display:flex}.nav-links a{padding:14px}.nav-links .nav-contact{text-align:center}.hero{padding-top:22px}.hero-topline{font-size:8px}.hero-layout{display:flex;flex-direction:column;align-items:stretch;padding:45px 0 28px;gap:35px}.hero-copy{padding:0}.eyebrow{font-size:8px;flex-wrap:wrap}.hero h1{font-size:clamp(60px,16vw,100px)}.hero-description{font-size:13px}.hero-footnote{margin-top:34px}.hero-art{height:350px}.planet-main{width:150px;height:150px}.orbit-one{width:270px;height:140px}.orbit-two{width:250px;height:190px}.orbit-three{height:260px}.art-sticker{font-size:10px;padding:10px;right:9%;top:22%}.art-coordinates{font-size:8px;left:6%;bottom:19%}.cursor-hint{font-size:8px;right:12px;bottom:47px}.work-section{padding-top:76px;padding-bottom:70px}.section-heading{display:block;margin-bottom:28px}.section-heading h2{font-size:47px}.section-heading>p{margin-top:18px}.project-grid{grid-template-columns:1fr;gap:30px}.project-card:last-child{grid-column:auto}.project-visual{height:270px}.project-info h3{font-size:27px}.work-bottom{flex-direction:column;gap:10px}.approach-section{padding:70px 0}.approach-title{display:block;margin-bottom:35px}.approach-title h2{font-size:57px}.approach-title>p{margin-top:22px}.process-grid{grid-template-columns:repeat(2,1fr)}.process-item{min-height:230px;padding:20px 12px 20px 0}.process-item+.process-item{padding-left:14px}.process-item:nth-child(3){border-left:0;border-top:1px solid #343944}.process-item:nth-child(4){border-top:1px solid #343944}.process-item p{font-size:11px;min-height:78px}.process-number{right:8px}.about-section{padding-top:75px;padding-bottom:75px}.about-layout{grid-template-columns:1fr;gap:25px}.about-big h2{font-size:clamp(58px,14vw,90px)}.about-star{right:8%;top:5%}.about-copy{padding:0}.contact-section{padding-top:50px}.contact-top .mono{font-size:8px}.contact-inner h2{font-size:clamp(64px,16vw,100px);margin:50px 0 28px}.contact-bottom{display:block;padding-bottom:45px}.contact-bottom p{font-size:13px;margin-bottom:22px}.contact-button{width:100%;justify-content:space-between}.footer-line{padding:17px 0;display:grid;grid-template-columns:1fr auto;gap:14px}.footer-line>span:nth-child(2){grid-column:1/-1;grid-row:2}.footer-line>span:last-child{justify-self:end}.socials{justify-self:end}.corner-index{display:none}.project-modal{padding:25px 20px}.modal-hero{gap:13px;padding:28px 0}.modal-glyph{width:60px;height:60px;font-size:34px}.modal-hero h2{font-size:32px}.modal-hero p{font-size:11px}.modal-content{grid-template-columns:1fr;gap:22px}.modal-wide,.modal-disclaimer{grid-column:auto}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+.loading-bars {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin-left: 7px;
+  height: 12px;
+  min-height: 12px;
+  vertical-align: middle;
+  flex: 0 0 22px;
+  overflow: hidden;
+}
+
+.loading-bars i {
+  display: block;
+  flex: 0 0 4px;
+  width: 4px;
+  height: 10px;
+  background: var(--lime);
+  transform: scaleY(1);
+  transform-origin: center;
+  animation: barPulse 0.8s ease-in-out infinite alternate;
+}
+
+.loading-bars i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-bars i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Animate using transforms to prevent layout shifts. */
+@keyframes barPulse {
+  from {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scaleY(0.4);
+    opacity: 0.45;
+  }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  .loading-bars i {
+    animation: none;
+  }
+}
+

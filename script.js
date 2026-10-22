@@ -87,7 +87,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && !backdrop.
 
 const copyEmail = $('#copyEmail');
 copyEmail.addEventListener('click', async () => {
-  const email = 'your.email@example.com'; // Replace this with your real email.
+  const email = 'weihan5925c@gmail.com'; // Replace this with your real email.
   try {
     await navigator.clipboard.writeText(email);
     copyEmail.innerHTML = 'EMAIL COPIED ✓';
