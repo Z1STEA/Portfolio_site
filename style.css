@@ -7,14 +7,14 @@
 
 /* 1. GLOBAL COLORS — edit these variables to change the whole theme. */
 :root {
-  --background: #080b0d;
-  --section-background: #0d1215;
-  --card-background: #11191c;
-  --text: #f0f4ee;
-  --muted-text: #9aa8a5;
+  --background: #171e20;
+  --section-background: #202a2c;
+  --card-background: #293638;
+  --text: #f4f7f1;
+  --muted-text: #bdc8c3;
   --accent: #d7ff3f;       /* electric chartreuse */
   --accent-secondary: #ff654f; /* signal orange-red */
-  --border: rgba(214, 231, 222, 0.17);
+  --border: rgba(226, 240, 232, 0.22);
   --page-width: 1440px;
   --page-padding: 10%;
 }
@@ -50,7 +50,7 @@ img { max-width: 100%; }
   justify-content: space-between;
   padding: 0 7%;
   border-bottom: 1px solid var(--border);
-  background: rgba(8, 11, 13, .92);
+  background: rgba(23, 30, 32, .94);
   backdrop-filter: blur(14px);
 }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 800; letter-spacing: .2em; }
@@ -105,11 +105,11 @@ img { max-width: 100%; }
 .hero h1 .accent { text-shadow: 0 0 28px rgba(215,255,63,.12); }
 .hero-description { max-width: 470px; color: var(--muted-text); font-size: 14px; line-height: 1.9; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-.hero-meta { display: flex; justify-content: space-between; gap: 20px; margin-top: 100px; padding-top: 15px; border-top: 1px solid var(--border); color: #778481; font: 9px "DM Mono", monospace; letter-spacing: .16em; }
+.hero-meta { display: flex; justify-content: space-between; gap: 20px; margin-top: 100px; padding-top: 15px; border-top: 1px solid var(--border); color: #a9b6b0; font: 9px "DM Mono", monospace; letter-spacing: .16em; }
 
 /* 5. SECTION TITLES */
 .work-section, .about-section, .contact-section { padding: 100px var(--page-padding); }
-.work-section { background: rgba(13,18,21,.94); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.work-section { background: rgba(32,42,44,.96); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section-title-row { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 38px; }
 .section-title-row h2, .about-grid h2, .contact-section h2 { margin-bottom: 0; font-size: clamp(36px, 5.5vw, 66px); line-height: .98; letter-spacing: -.065em; text-transform: uppercase; }
 .section-intro { max-width: 270px; margin-bottom: 4px; color: var(--muted-text); font-size: 12px; line-height: 1.8; }
@@ -118,7 +118,7 @@ img { max-width: 100%; }
    Copy a complete <article class="work-card"> block in index.html
    to add a project. Each .work-gallery can contain any number of images. */
 .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.work-card { overflow: hidden; border: 1px solid var(--border); background: rgba(8,11,13,.88); transition: border-color .25s, transform .25s; }
+.work-card { overflow: hidden; border: 1px solid var(--border); background: rgba(37,49,51,.96); transition: border-color .25s, transform .25s; }
 .work-card:hover { border-color: rgba(215,255,63,.62); transform: translateY(-3px); }
 .work-gallery {
   display: grid;
@@ -128,7 +128,7 @@ img { max-width: 100%; }
   overflow: hidden;
   min-height: 190px;
   aspect-ratio: 16 / 10;
-  background: #1b2426;
+  background: #354447;
   border-bottom: 1px solid var(--border);
 }
 .work-gallery img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; filter: saturate(.82) contrast(1.06); }
@@ -162,7 +162,7 @@ img { max-width: 100%; }
 .about-copy p + p { margin-top: 16px; }
 
 /* 8. CONTACT */
-.contact-section { position: relative; overflow: hidden; background: #121a1b; border-top: 1px solid var(--border); text-align: center; }
+.contact-section { position: relative; overflow: hidden; background: #263436; border-top: 1px solid var(--border); text-align: center; }
 .contact-section::before { content: "INCOMING SIGNAL"; display: block; margin-bottom: 18px; color: var(--accent-secondary); font: 9px "DM Mono", monospace; letter-spacing: .25em; }
 .contact-section .eyebrow { margin-bottom: 20px; }
 .contact-section h2 { margin-bottom: 30px; }
@@ -170,8 +170,33 @@ img { max-width: 100%; }
 code { color: var(--accent); }
 
 /* 9. FOOTER */
-.site-footer { display: flex; justify-content: space-between; padding: 25px 7%; border-top: 1px solid var(--border); color: #778481; font: 9px "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.site-footer { display: flex; justify-content: space-between; padding: 25px 7%; border-top: 1px solid var(--border); color: #a9b6b0; font: 9px "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
 .site-footer a { color: var(--text); }
+
+
+/* 9. CLICKABLE PROJECT CARDS + PROJECT DETAIL POPUP */
+.work-card { cursor: pointer; }
+.work-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.work-card:hover .work-card h3 { color: var(--accent); }
+.project-modal { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 24px; }
+.project-modal.is-open { display: flex; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(4, 7, 8, .78); backdrop-filter: blur(8px); }
+.modal-panel {
+  position: relative; z-index: 1; width: min(900px, 100%); max-height: 90vh; overflow-y: auto;
+  padding: clamp(22px, 4vw, 42px); background: #263436; border: 1px solid rgba(215,255,63,.45);
+  box-shadow: 0 25px 90px rgba(0,0,0,.45);
+}
+.modal-close {
+  position: sticky; float: right; top: 0; z-index: 2; display: grid; place-items: center;
+  width: 40px; height: 40px; margin: -6px -6px 8px 16px; border: 1px solid var(--border);
+  background: #172123; color: var(--text); font-size: 28px; cursor: pointer;
+}
+.modal-panel h2 { clear: none; margin: 0 0 22px; font-size: clamp(30px, 5vw, 52px); text-transform: uppercase; letter-spacing: -.05em; }
+.modal-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px; margin-bottom: 22px; }
+.modal-gallery img { width: 100%; max-height: 460px; object-fit: contain; background: #151d1f; border: 1px solid var(--border); }
+.modal-gallery .image-placeholder { min-height: 220px; }
+.modal-description { color: var(--muted-text); font-size: 14px; line-height: 1.9; max-width: 720px; }
+body.modal-open { overflow: hidden; }
 
 /* 10. MOBILE */
 @media (max-width: 700px) {
@@ -191,4 +216,7 @@ code { color: var(--accent); }
   .work-grid, .about-grid { grid-template-columns: 1fr; }
   .about-grid { gap: 25px; }
   .work-card-content > p { min-height: 0; }
+  .project-modal { padding: 10px; }
+  .modal-panel { max-height: 94vh; padding: 20px; }
+  .modal-gallery { grid-template-columns: 1fr; }
 }

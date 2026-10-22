@@ -24,7 +24,7 @@ Open `index.html`. Sections are marked with comments:
    </div>
    ```
 
-3. You can use one image or multiple images in the same card. The gallery layout adapts automatically.
+3. You can use one image or multiple images in the same card. The gallery layout adapts automatically. Click any work card or its preview image on the website to open a project-details popup with the images enlarged.
 4. Copy a whole `<article class="work-card"> ... </article>` block to create another project card. Update its number, type, title, description, image paths, and link.
 
 ## Customize design

@@ -50,7 +50,7 @@
 
     <!-- ==================== WORK / PROJECT CARDS ====================
          To add another project:
-         1. Copy one complete <article class="work-card">...</article> block.
+         1. Copy one complete <article class="work-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open project details">...</article> block.
          2. Change the title, type, description, and image paths.
          3. For multiple images, add more <img> tags inside .work-gallery.
          4. For one image only, delete the extra img tags.
@@ -68,7 +68,7 @@
         <!-- PROJECT CARD 01: GreenPlan
              Edit the text below. Replace image filenames with your own images inside assets/projects/.
              Add or remove <img> tags to show multiple images in this card. -->
-        <article class="work-card">
+        <article class="work-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open project details">
           <div class="work-gallery">
             <img src="assets/greenplan-cover.png" alt="GreenPlan project cover">
             <img src="assets/greenplan-mobile.png" alt="GreenPlan mobile screens">
@@ -87,7 +87,7 @@
         <!-- PROJECT CARD 02: RP Helper
              Replace the example images with screenshots from your RP Helper project.
              Keep one image or add several <img> tags in .work-gallery. -->
-        <article class="work-card">
+        <article class="work-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open project details">
           <div class="work-gallery">
             <!-- Replace these image paths with your own RP Helper screenshots.
                  Example: <img src="assets/projects/rp-helper-home.png" alt="RP Helper home screen"> -->
@@ -111,7 +111,7 @@
         <!-- PROJECT CARD 03: Add a new project
              Duplicate this entire article to add a new work card.
              Use as many images as you want inside .work-gallery. -->
-        <article class="work-card">
+        <article class="work-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open project details">
           <div class="work-gallery">
             <div class="image-placeholder">
               <span class="placeholder-icon">＋</span>
@@ -154,6 +154,22 @@
       <p class="small-note">Remember to replace <code>your.email@example.com</code> with your own email.</p>
     </section>
   </main>
+
+
+  <!-- ==================== PROJECT DETAIL POPUP ====================
+       Project cards open this popup. The contents are filled by script.js.
+       Keep this markup in place if you want the cards to open project details. -->
+  <div class="project-modal" id="project-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="Close project details" data-close-modal>×</button>
+      <p class="eyebrow" id="modal-type">PROJECT DETAILS</p>
+      <h2 id="modal-title">Project title</h2>
+      <div class="modal-gallery" id="modal-gallery"></div>
+      <p class="modal-description" id="modal-description"></p>
+      <a class="button button-primary modal-contact-link" href="#contact">Discuss a similar project <span aria-hidden="true">↗</span></a>
+    </section>
+  </div>
 
   <!-- Footer year is filled automatically by script.js -->
   <footer class="site-footer">
