@@ -1,153 +1,17 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090b10">
-  <meta name="description" content="Wei Han — UI/UX designer shaping expressive, human-centered digital experiences.">
-  <title>Wei Han® — Interface Explorer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <div class="grain" aria-hidden="true"></div>
-  <header class="topbar">
-    <a class="wordmark" href="#top" aria-label="Wei Han home">
-      <span class="brand-mark">W<span>✳</span></span>
-      <span>WEI HAN<small>DESIGNER / THINKER / MAKER</small></span>
-    </a>
-    <div class="system-status"><span class="status-dot"></span> OPEN TO OPPORTUNITIES <span class="status-divider">/</span> <span id="clock">--:--</span></div>
-    <button class="mobile-menu" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#work">WORK <span>01</span></a>
-      <a href="#approach">PROCESS <span>02</span></a>
-      <a href="#about">ABOUT <span>03</span></a>
-      <a class="nav-contact" href="#contact">LET'S TALK ↗</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero section-wrap">
-      <div class="hero-topline">
-        <span><span class="tiny-cross">✳</span> INDEPENDENT UI/UX DESIGNER</span>
-        <span class="mono">SINGAPORE · <span id="year"></span></span>
-      </div>
-      <div class="hero-layout">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-line"></span> GOOD DESIGN SHOULD <em>FEEL</em> LIKE SOMETHING.</div>
-          <h1>I MAKE<br><span class="outline-text">DIGITAL</span><br><span class="accent-text">FEEL ALIVE<span class="period">.</span></span></h1>
-          <p class="hero-description">I’m Wei Han — a UI/UX designer shaping useful, expressive digital experiences. I turn messy problems into interfaces people can <i>understand, enjoy, and remember.</i></p>
-          <div class="hero-actions">
-            <a class="primary-button" href="#work">EXPLORE SELECTED WORK <span>↘</span></a>
-            <button class="text-button" id="playMode"><span>✧</span> ACTIVATE PLAY MODE</button>
-          </div>
-          <div class="hero-footnote"><span class="scroll-indicator"><span></span></span> SCROLL TO EXPLORE <span class="mono">[ NO BORING STUFF ]</span></div>
-        </div>
-        <div class="hero-art" aria-label="Abstract interactive design artwork">
-          <div class="art-label label-top"><span>FIG. 001</span><span>FORM / FUNCTION</span></div>
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
-          <div class="planet planet-main"><div class="planet-shine"></div><div class="planet-grid"></div></div>
-          <div class="planet planet-small"><span>W*</span></div>
-          <div class="art-cross cross-a">+</div><div class="art-cross cross-b">✳</div>
-          <div class="art-sticker">DESIGN<br>WITH<br><b>INTENT.</b></div>
-          <div class="art-coordinates mono">01° / UX<br>02° / UI<br>03° / FEELING</div>
-          <div class="art-label label-bottom"><span>INTERFACE STUDY</span><span><i class="pulse-dot"></i> LIVE / 001</span></div>
-          <div class="cursor-hint">↖ MOVE YOUR CURSOR</div>
-        </div>
-      </div>
-      <div class="ticker"><div class="ticker-track">
-        <span>THOUGHTFUL BY DESIGN ✳ BUILT FOR HUMANS ✳ CURIOUS BY DEFAULT ✳</span>
-        <span>THOUGHTFUL BY DESIGN ✳ BUILT FOR HUMANS ✳ CURIOUS BY DEFAULT ✳</span>
-        <span>THOUGHTFUL BY DESIGN ✳ BUILT FOR HUMANS ✳ CURIOUS BY DEFAULT ✳</span>
-      </div></div>
-    </section>
-
-    <section class="work-section section-wrap" id="work">
-      <div class="section-heading">
-        <div><div class="section-index">01 / SELECTED WORK</div><h2>Proof of <span class="accent-text">curiosity.</span></h2></div>
-        <p>Not just pretty screens. Each project starts with a question, moves through a process, and ends with a more considered experience.</p>
-      </div>
-      <div class="project-grid">
-        <button class="project-card mint" data-project="greenplan" aria-label="Open GreenPlan case study">
-          <div class="project-visual">
-            <div class="project-top"><span>PROJECT_01</span><span>2026</span></div>
-            <div class="greenplan-art"><div class="gp-sun">✳</div><div class="gp-phone"><div class="phone-notch"></div><span class="phone-kicker">YOUR DAILY IMPACT</span><strong>Small steps.<br>Real change.</strong><div class="leaf-orb">✳</div><div class="phone-progress"><span></span></div><small>WEEKLY PROGRESS <b>72%</b></small></div><div class="gp-caption">GROW A BETTER<br>EVERYDAY ↗</div></div>
-            <span class="project-open">↗</span>
-          </div>
-          <div class="project-info"><div><span class="project-type">MOBILE APP / UX CASE STUDY</span><h3>GreenPlan</h3><p>Make greener choices feel effortless.</p></div><span class="project-index">01</span></div>
-          <div class="project-tags"><span>UX strategy</span><span>Mobile UI</span><span>Prototyping</span></div>
-        </button>
-        <button class="project-card violet" data-project="rphelper" aria-label="Open RP-Helper case study">
-          <div class="project-visual">
-            <div class="project-top"><span>PROJECT_02</span><span>2026</span></div>
-            <div class="helper-art"><div class="helper-window"><div class="window-head"><i></i><i></i><i></i><span>RP / HELPER</span></div><div class="helper-sidebar"><b>✳</b><span></span><span></span><span></span><span></span></div><div class="helper-content"><small>YOUR WORKSPACE</small><strong>What can we<br>make easier?</strong><div class="helper-task"><span>01</span><b>Quick actions</b><i>↗</i></div><div class="helper-task"><span>02</span><b>Recent activity</b><i>↗</i></div></div></div><div class="helper-orb">◈</div><div class="helper-stamp">LESS FRICTION<br>MORE FLOW</div></div>
-            <span class="project-open">↗</span>
-          </div>
-          <div class="project-info"><div><span class="project-type">PRODUCT CONCEPT / INTERACTION DESIGN</span><h3>RP-Helper</h3><p>Less friction. More flow.</p></div><span class="project-index">02</span></div>
-          <div class="project-tags"><span>Interaction design</span><span>Design system</span><span>Usability</span></div>
-        </button>
-        <button class="project-card orange" data-project="lab" aria-label="Open Interface Lab case study">
-          <div class="project-visual">
-            <div class="project-top"><span>PROJECT_03</span><span>ONGOING</span></div>
-            <div class="lab-art"><div class="lab-ring ring-a"></div><div class="lab-ring ring-b"></div><div class="lab-shape">✳</div><div class="lab-label">HOVER / FEEDBACK / MOTION</div><div class="lab-cursor">↖ <span>TRY ME</span></div><div class="lab-number">EX—003</div></div>
-            <span class="project-open">↗</span>
-          </div>
-          <div class="project-info"><div><span class="project-type">CREATIVE CODING / EXPERIMENT</span><h3>Interface Lab</h3><p>Small interactions, big personality.</p></div><span class="project-index">03</span></div>
-          <div class="project-tags"><span>Micro-interactions</span><span>Motion</span><span>CSS</span></div>
-        </button>
-      </div>
-      <div class="work-bottom"><span>03 PROJECTS / 03 DIFFERENT QUESTIONS</span><span>MORE EXPERIMENTS LOADING <span class="loading-bars"><i></i><i></i><i></i></span></span></div>
-    </section>
-
-    <section class="approach-section" id="approach">
-      <div class="section-wrap approach-inner">
-        <div class="section-index">02 / HOW I THINK</div>
-        <div class="approach-title"><h2>Good UX is<br>a <span class="scribble">feeling.</span><br>Backed by a <span class="accent-text">reason.</span></h2><p>I care about the tiny details that make an interface feel obvious, the systems that keep it consistent, and the moments that make it memorable.</p></div>
-        <div class="process-grid">
-          <article class="process-item"><div class="process-number">01</div><div class="process-icon">◎</div><h3>OBSERVE</h3><p>Understand the person, the context, and the real problem before jumping into screens.</p><span>RESEARCH / DISCOVERY</span></article>
-          <article class="process-item"><div class="process-number">02</div><div class="process-icon">▦</div><h3>STRUCTURE</h3><p>Build a clear information hierarchy and flows that make the next step feel natural.</p><span>IA / WIREFRAMES</span></article>
-          <article class="process-item"><div class="process-number">03</div><div class="process-icon">◉</div><h3>MAKE IT FEEL</h3><p>Use visual systems, interaction, and motion to guide attention and create feedback.</p><span>UI / PROTOTYPING</span></article>
-          <article class="process-item"><div class="process-number">04</div><div class="process-icon">ϟ</div><h3>REFINE</h3><p>Test assumptions, notice friction, and iterate until the experience feels right.</p><span>TEST / ITERATE</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section section-wrap" id="about">
-      <div class="section-index">03 / A LITTLE ABOUT ME</div>
-      <div class="about-layout"><div class="about-big"><span class="about-star">✳</span><h2>Curious<br>by <span class="accent-text">nature.</span><br>Intentional<br>by <span class="outline-text">design.</span></h2></div>
-        <div class="about-copy"><div class="about-card"><span class="mono">A NOTE FROM THE DESIGNER ↘</span><p>I’m interested in the space between how something looks and how it works. I like exploring visual ideas, asking why a flow feels confusing, and turning those discoveries into interfaces with personality.</p><p>My goal is simple: make digital products feel a little more human.</p></div>
-          <div class="skill-block"><span class="mono">CURRENT TOOLKIT</span><div class="skill-list"><span>✳ FIGMA</span><span>▧ PROTOTYPING</span><span>⌘ DESIGN SYSTEMS</span><span>▦ WIREFRAMING</span><span>◎ USABILITY</span><span>ϟ INTERACTION</span></div></div>
-          <div class="about-note"><span class="note-star">✳</span><span>ALWAYS LEARNING.<br>ALWAYS MAKING.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact"><div class="section-wrap contact-inner">
-      <div class="contact-top"><span class="section-index">04 / YOUR TURN</span><span class="mono">HAVE A GOOD ONE IN MIND?</span></div>
-      <h2>Let's make<br><span class="outline-text">something</span><br><span class="accent-text">matter.</span></h2>
-      <div class="contact-bottom"><p>Have a project, an opportunity, or a weird idea worth exploring? My inbox is open.</p><button class="contact-button" id="copyEmail">COPY MY EMAIL <span>↗</span></button></div>
-      <div class="footer-line"><a href="#top" class="footer-logo">W<span>✳</span> / WEI HAN</a><span>DESIGNED WITH INTENT, BUILT WITH CURIOSITY.</span><div class="socials"><a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a><a href="https://www.figma.com/" target="_blank" rel="noreferrer" aria-label="Figma">FG</a><a href="https://dribbble.com/" target="_blank" rel="noreferrer" aria-label="Dribbble">DB</a></div><span id="footerYear"></span></div>
-    </div></section>
-  </main>
-
-  <div class="corner-index">WH—001 <span></span> INTERFACE EXPLORER</div>
-
-  <div class="modal-backdrop" id="modalBackdrop" hidden>
-    <section class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" aria-label="Close case study">×</button>
-      <div class="modal-kicker" id="modalKicker">CASE STUDY</div>
-      <div class="modal-hero"><span class="modal-glyph" id="modalGlyph">✳</span><div><h2 id="modalTitle">Project</h2><p id="modalTagline"></p></div></div>
-      <div class="modal-content">
-        <div><span class="mono">THE CHALLENGE</span><p id="modalDesc"></p></div>
-        <div><span class="mono">DESIGN INTENT</span><p id="modalOutcome"></p></div>
-        <div class="modal-wide"><span class="mono">EXPERIENCE BREAKDOWN</span><div class="modal-steps" id="modalSteps"></div></div>
-        <div class="modal-wide"><span class="mono">FOCUS AREAS</span><div class="modal-tags" id="modalTags"></div></div>
-        <p class="modal-disclaimer">Portfolio concept preview. Replace this overview with your final research, process artifacts, prototypes, and verified project outcomes.</p>
-      </div>
-    </section>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b10" />
+    <meta name="description" content="Wei Han — UI/UX designer shaping expressive, human-centered digital experiences." />
+    <title>Wei Han® — Interface Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
