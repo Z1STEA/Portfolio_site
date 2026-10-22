@@ -19,12 +19,21 @@ function openProject(card) {
 
   const title = card.querySelector("h3")?.textContent.trim() || "Project";
   const type = card.querySelector(".work-type")?.textContent.trim() || "PROJECT DETAILS";
-  const description = card.querySelector(".work-card-content > p")?.textContent.trim() || "";
+  const shortDescription = card.querySelector(".work-card-content > p")?.textContent.trim() || "";
+  const fullDescription = card.querySelector(".project-full-description");
   const gallery = card.querySelector(".work-gallery");
 
   modalTitle.textContent = title;
   modalType.textContent = type;
-  modalDescription.textContent = description;
+  modalDescription.replaceChildren();
+  if (fullDescription) {
+    // Copy the project's complete, editable description into the popup.
+    modalDescription.innerHTML = fullDescription.innerHTML;
+  } else if (shortDescription) {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = shortDescription;
+    modalDescription.appendChild(paragraph);
+  }
   modalGallery.replaceChildren();
 
   if (gallery) {
@@ -63,14 +72,12 @@ function closeProject() {
 // Don't intercept links inside the card, so contact links keep working normally.
 document.querySelectorAll(".work-card").forEach((card) => {
   card.addEventListener("click", (event) => {
-    if (event.target.closest("a")) {
-      // The card's "ask me" link scrolls to Contact; gallery links open details.
-      if (event.target.closest(".project-image")) {
-        event.preventDefault();
-        openProject(card);
-      }
+    if (event.target.closest(".work-link")) {
+      event.preventDefault();
+      openProject(card);
       return;
     }
+    if (event.target.closest("a")) return;
     openProject(card);
   });
 
@@ -85,6 +92,9 @@ document.querySelectorAll(".work-card").forEach((card) => {
 projectModal?.querySelectorAll("[data-close-modal]").forEach((element) => {
   element.addEventListener("click", closeProject);
 });
+
+// Close the popup before following its contact link.
+modalContactLink?.addEventListener("click", closeProject);
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && projectModal?.classList.contains("is-open")) {

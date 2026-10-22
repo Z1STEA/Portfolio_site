@@ -38,3 +38,10 @@ Edit `style.css`. The main colors are at the top in `:root`:
 
 ## Contact email
 In `index.html`, replace `your.email@example.com` in the `mailto:` link with your real email address.
+
+
+## Logo and project popups
+- Your WH logo is shown in the header using `assets/logo-wh-transparent.png`. The original `assets/Logo W.png` is also included.
+- The monochrome black-and-white theme was chosen to match the logo.
+- Clicking a project card opens a popup with its images and full description. Edit the hidden `.project-full-description` block inside each card in `index.html` to change the popup text.
+- The site uses plain HTML, CSS, and JavaScript and works with GitHub Pages.
