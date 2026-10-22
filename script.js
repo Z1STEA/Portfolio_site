@@ -37,11 +37,32 @@ function openProject(card) {
   modalGallery.replaceChildren();
 
   if (gallery) {
-    gallery.querySelectorAll("img").forEach((image) => {
-      const enlargedImage = document.createElement("img");
-      enlargedImage.src = image.getAttribute("src");
-      enlargedImage.alt = image.alt || `${title} project image`;
-      modalGallery.appendChild(enlargedImage);
+    // Copy photos and videos into the popup.
+    gallery.querySelectorAll("img, video").forEach((media) => {
+      if (media.tagName.toLowerCase() === "img") {
+        const enlargedImage = document.createElement("img");
+        enlargedImage.src = media.getAttribute("src");
+        enlargedImage.alt = media.alt || `${title} project image`;
+        modalGallery.appendChild(enlargedImage);
+      } else {
+        const enlargedVideo = document.createElement("video");
+        enlargedVideo.controls = true;
+        enlargedVideo.playsInline = true;
+        enlargedVideo.preload = "metadata";
+
+        media.querySelectorAll("source").forEach((source) => {
+          const newSource = document.createElement("source");
+          newSource.src = source.getAttribute("src");
+          newSource.type = source.getAttribute("type") || "video/mp4";
+          enlargedVideo.appendChild(newSource);
+        });
+
+        if (media.getAttribute("src")) {
+          enlargedVideo.src = media.getAttribute("src");
+        }
+
+        modalGallery.appendChild(enlargedVideo);
+      }
     });
 
     const placeholder = gallery.querySelector(".image-placeholder");

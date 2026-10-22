@@ -45,3 +45,24 @@ In `index.html`, replace `your.email@example.com` in the `mailto:` link with you
 - The monochrome black-and-white theme was chosen to match the logo.
 - Clicking a project card opens a popup with its images and full description. Edit the hidden `.project-full-description` block inside each card in `index.html` to change the popup text.
 - The site uses plain HTML, CSS, and JavaScript and works with GitHub Pages.
+
+
+## Add a video to a project
+1. Put your MP4 file in `assets/projects/`.
+2. Inside that project's `<div class="work-gallery">`, add:
+
+   ```html
+   <video class="project-video" muted playsinline controls preload="metadata">
+     <source src="assets/projects/my-demo.mp4" type="video/mp4">
+   </video>
+   ```
+
+3. Change `my-demo.mp4` to your filename. Copy the video block to add another video.
+4. Clicking the card opens the popup with photos and videos. Use the video controls to play or pause.
+
+## Quick editing guide
+- **Photos:** copy an `<img ...>` line inside `.work-gallery`.
+- **Videos:** copy a `<video ...>` block inside `.work-gallery`.
+- **Full popup text:** edit `.project-full-description` in that same card.
+- **Colors:** edit the `EASY THEME CONTROLS` section near the bottom of `style.css`.
+- **New project:** copy one complete `<article class="work-card"> ... </article>` block in `index.html`.
