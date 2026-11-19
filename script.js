@@ -27,85 +27,135 @@ const projects = {
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
+
 const now = new Date();
+
 $('#year').textContent = now.getFullYear();
 $('#footerYear').textContent = `© ${now.getFullYear()}`;
+
 function updateClock() {
-  $('#clock').textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+  $('#clock').textContent = new Date().toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
 }
+
 updateClock();
 setInterval(updateClock, 30000);
 
+// Mobile navigation
+
 const menuToggle = $('#menuToggle');
 const navLinks = $('#navLinks');
+
 menuToggle.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
+
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   menuToggle.textContent = open ? '×' : '☰';
 });
+
 $$('#navLinks a').forEach(link => link.addEventListener('click', () => {
   navLinks.classList.remove('open');
   menuToggle.setAttribute('aria-expanded', 'false');
   menuToggle.textContent = '☰';
 }));
 
+// Play mode
+
 const playMode = $('#playMode');
+
 playMode.addEventListener('click', () => {
   const active = document.body.classList.toggle('play-mode');
-  playMode.innerHTML = active ? '<span>✧</span> TURN OFF PLAY MODE' : '<span>✧</span> ACTIVATE PLAY MODE';
+
+  playMode.innerHTML = active
+    ? '<span>✧</span> TURN OFF PLAY MODE'
+    : '<span>✧</span> ACTIVATE PLAY MODE';
 });
+
+// Project modal
 
 const backdrop = $('#modalBackdrop');
 const modal = $('.project-modal');
+
 function openProject(key) {
   const project = projects[key];
+
   if (!project) return;
+
   modal.className = `project-modal ${project.color}`;
+
   $('#modalKicker').textContent = `CASE STUDY / ${project.id} / ${project.type}`;
   $('#modalTitle').textContent = project.name;
   $('#modalTagline').textContent = project.tagline;
   $('#modalGlyph').textContent = project.glyph;
   $('#modalDesc').textContent = project.desc;
   $('#modalOutcome').textContent = project.outcome;
+
   $('#modalSteps').innerHTML = project.screens.map((screen, i) =>
     `<div><span>0${i + 1}</span><b>${screen}</b><em>↗</em></div>`
   ).join('');
-  $('#modalTags').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
+
+  $('#modalTags').innerHTML = project.tags.map(tag =>
+    `<span>${tag}</span>`
+  ).join('');
+
   backdrop.hidden = false;
   document.body.style.overflow = 'hidden';
   $('#modalClose').focus();
 }
+
 function closeProject() {
   backdrop.hidden = true;
   document.body.style.overflow = '';
 }
-$$('[data-project]').forEach(button => button.addEventListener('click', () => openProject(button.dataset.project)));
+
+$$('[data-project]').forEach(button => {
+  button.addEventListener('click', () => openProject(button.dataset.project));
+});
+
 $('#modalClose').addEventListener('click', closeProject);
-backdrop.addEventListener('click', e => { if (e.target === backdrop) closeProject(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && !backdrop.hidden) closeProject(); });
+
+backdrop.addEventListener('click', e => {
+  if (e.target === backdrop) closeProject();
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !backdrop.hidden) {
+    closeProject();
+  }
+});
+
+// Copy email
 
 const copyEmail = $('#copyEmail');
+
 copyEmail.addEventListener('click', async () => {
-  const email = 'weihan5925c@gmail.com'; // Replace this with your real email.
+  const email = 'weihan5925@gmail.com'; // Replace this with your real email.
+
   try {
     await navigator.clipboard.writeText(email);
+
     copyEmail.innerHTML = 'EMAIL COPIED ✓';
-    setTimeout(() => copyEmail.innerHTML = 'COPY MY EMAIL <span>↗</span>', 1800);
+
+    setTimeout(() => {
+      copyEmail.innerHTML = 'COPY MY EMAIL <span>↗</span>';
+    }, 1800);
+
   } catch {
     window.location.href = `mailto:${email}`;
   }
 });
 
-
-/* =====================================
-   DESIGN PROCESS PROGRESSION
-===================================== */
+// =====================================
+// DESIGN PROCESS PROGRESSION
+// =====================================
 
 const processItems = $$('.process-item');
 
 const processProgressFill = $('#processProgressFill');
-
 const processProgressText = $('#processProgressText');
 
 if (processItems.length > 0) {
@@ -113,6 +163,7 @@ if (processItems.length > 0) {
   function updateProcess(index) {
 
     // Highlight the current process step
+
     processItems.forEach((item, i) => {
 
       if (i === index) {
@@ -124,6 +175,7 @@ if (processItems.length > 0) {
     });
 
     // Update the progress bar
+
     if (processProgressFill) {
 
       const progress = ((index + 1) / processItems.length) * 100;
@@ -133,6 +185,7 @@ if (processItems.length > 0) {
     }
 
     // Update the step number
+
     if (processProgressText) {
 
       processProgressText.textContent =
@@ -143,9 +196,11 @@ if (processItems.length > 0) {
   }
 
   // Start with the first step
+
   updateProcess(0);
 
   // Check which process card is visible
+
   if ('IntersectionObserver' in window) {
 
     const processObserver = new IntersectionObserver(entries => {
@@ -169,6 +224,7 @@ if (processItems.length > 0) {
     });
 
     // Watch all four process cards
+
     processItems.forEach(item => {
       processObserver.observe(item);
     });
@@ -176,4 +232,3 @@ if (processItems.length > 0) {
   }
 
 }
-
