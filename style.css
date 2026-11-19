@@ -55,3 +55,200 @@
   }
 }
 
+
+/* =====================================
+   DESIGN PROCESS SECTION
+   Uses the existing website colours
+===================================== */
+
+.approach-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.approach-inner {
+  position: relative;
+}
+
+/* Process heading */
+
+.approach-title {
+  margin-bottom: 48px;
+}
+
+/* Progress heading */
+
+.process-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+  color: var(--muted);
+}
+
+.process-intro .mono {
+  font-size: 10px;
+}
+
+/* Progress line */
+
+.process-progress {
+  width: 100%;
+  height: 2px;
+  background: var(--line);
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.process-progress-fill {
+  width: 25%;
+  height: 100%;
+  background: var(--lime);
+  transition: width 0.45s ease;
+}
+
+/* Process cards */
+
+.process-grid {
+  align-items: stretch;
+}
+
+.process-item {
+  min-height: 340px;
+  padding: 23px 19px 25px 0;
+  transition: opacity 0.3s ease;
+}
+
+.process-item + .process-item {
+  padding-left: 20px;
+}
+
+/* Active step */
+
+.process-item.active .process-icon {
+  background: var(--lime);
+  color: var(--bg);
+  border-color: var(--lime);
+  box-shadow: 0 0 18px #d4ff3f25;
+}
+
+.process-item.active .process-number {
+  color: var(--lime);
+}
+
+/* Process descriptions */
+
+.process-item > p {
+  min-height: 84px;
+  max-width: 230px;
+  margin-bottom: 22px;
+}
+
+.process-details {
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.process-details span {
+  display: block;
+  color: var(--lime);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .08em;
+  margin: 13px 0 7px;
+}
+
+.process-details span:first-child {
+  margin-top: 0;
+}
+
+.process-details p {
+  color: #a3a7b2;
+  font-size: 11px;
+  line-height: 1.7;
+  min-height: 0;
+  margin-bottom: 12px;
+}
+
+.process-category {
+  display: block;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+  margin-top: 20px;
+}
+
+/* Bottom note */
+
+.process-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .process-item {
+    min-height: 360px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .process-intro {
+    margin-top: 30px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-item {
+    min-height: 350px;
+    padding: 20px 12px 20px 0;
+  }
+
+  .process-item + .process-item {
+    padding-left: 14px;
+  }
+
+  .process-item:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid #343944;
+  }
+
+  .process-item:nth-child(4) {
+    border-top: 1px solid #343944;
+  }
+
+  .process-item > p {
+    min-height: 100px;
+  }
+
+  .process-footer {
+    flex-direction: column;
+    line-height: 1.8;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .process-item,
+  .process-progress-fill {
+    transition: none;
+  }
+}
+

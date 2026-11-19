@@ -96,3 +96,84 @@ copyEmail.addEventListener('click', async () => {
     window.location.href = `mailto:${email}`;
   }
 });
+
+
+/* =====================================
+   DESIGN PROCESS PROGRESSION
+===================================== */
+
+const processItems = $$('.process-item');
+
+const processProgressFill = $('#processProgressFill');
+
+const processProgressText = $('#processProgressText');
+
+if (processItems.length > 0) {
+
+  function updateProcess(index) {
+
+    // Highlight the current process step
+    processItems.forEach((item, i) => {
+
+      if (i === index) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+
+    });
+
+    // Update the progress bar
+    if (processProgressFill) {
+
+      const progress = ((index + 1) / processItems.length) * 100;
+
+      processProgressFill.style.width = progress + '%';
+
+    }
+
+    // Update the step number
+    if (processProgressText) {
+
+      processProgressText.textContent =
+        'STEP 0' + (index + 1) + ' / 0' + processItems.length;
+
+    }
+
+  }
+
+  // Start with the first step
+  updateProcess(0);
+
+  // Check which process card is visible
+  if ('IntersectionObserver' in window) {
+
+    const processObserver = new IntersectionObserver(entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          const index = processItems.indexOf(entry.target);
+
+          if (index !== -1) {
+            updateProcess(index);
+          }
+
+        }
+
+      });
+
+    }, {
+      threshold: 0.2
+    });
+
+    // Watch all four process cards
+    processItems.forEach(item => {
+      processObserver.observe(item);
+    });
+
+  }
+
+}
+
