@@ -27,271 +27,208 @@ const projects = {
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
+
 const now = new Date();
+
 $('#year').textContent = now.getFullYear();
 $('#footerYear').textContent = `© ${now.getFullYear()}`;
+
 function updateClock() {
-  $('#clock').textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+  $('#clock').textContent = new Date().toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
 }
+
 updateClock();
 setInterval(updateClock, 30000);
 
+// Mobile navigation
+
 const menuToggle = $('#menuToggle');
 const navLinks = $('#navLinks');
+
 menuToggle.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
+
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   menuToggle.textContent = open ? '×' : '☰';
 });
+
 $$('#navLinks a').forEach(link => link.addEventListener('click', () => {
   navLinks.classList.remove('open');
   menuToggle.setAttribute('aria-expanded', 'false');
   menuToggle.textContent = '☰';
 }));
 
+// Play mode
+
 const playMode = $('#playMode');
+
 playMode.addEventListener('click', () => {
   const active = document.body.classList.toggle('play-mode');
-  playMode.innerHTML = active ? '<span>✧</span> TURN OFF PLAY MODE' : '<span>✧</span> ACTIVATE PLAY MODE';
+
+  playMode.innerHTML = active
+    ? '<span>✧</span> TURN OFF PLAY MODE'
+    : '<span>✧</span> ACTIVATE PLAY MODE';
 });
 
-const modalBackdrop = $('#modalBackdrop');
+// Project modal
+
+const backdrop = $('#modalBackdrop');
 const modal = $('.project-modal');
+
 function openProject(key) {
   const project = projects[key];
+
   if (!project) return;
+
   modal.className = `project-modal ${project.color}`;
+
   $('#modalKicker').textContent = `CASE STUDY / ${project.id} / ${project.type}`;
   $('#modalTitle').textContent = project.name;
   $('#modalTagline').textContent = project.tagline;
   $('#modalGlyph').textContent = project.glyph;
   $('#modalDesc').textContent = project.desc;
   $('#modalOutcome').textContent = project.outcome;
+
   $('#modalSteps').innerHTML = project.screens.map((screen, i) =>
-    `<button class="modal-step" type="button" data-step="${i}">
-      <span>0${i + 1}</span>
-      <b>${screen}</b>
-      <em>↗</em>
-    </button>`
+    `<div><span>0${i + 1}</span><b>${screen}</b><em>↗</em></div>`
   ).join('');
 
-  $$('#modalSteps [data-step]').forEach(button => {
-    button.addEventListener('click', () => {
-      const index = Number(button.dataset.step);
+  $('#modalTags').innerHTML = project.tags.map(tag =>
+    `<span>${tag}</span>`
+  ).join('');
 
-      const details = [
-        project.desc,
-        `TASK FLOW: ${project.screens.join(' → ')}`,
-        `OUTCOME: ${project.outcome}`
-      ];
-
-      $('#modalDesc').textContent =
-        details[index] || project.desc;
-
-      $$('#modalSteps [data-step]').forEach(item => {
-        item.classList.toggle('active', item === button);
-      });
-    });
-  });
-  $('#modalTags').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
-  modalBackdrop.hidden = false;
+  backdrop.hidden = false;
   document.body.style.overflow = 'hidden';
   $('#modalClose').focus();
 }
+
 function closeProject() {
-  modalBackdrop.hidden = true;
+  backdrop.hidden = true;
   document.body.style.overflow = '';
 }
 
-
-const galleryPhotos = [
-  {
-    src: 'assets/projects/greenplan-cover.png',
-    title: 'GreenPlan'
-  },
-  {
-    src: 'assets/projects/greenplan-mobile.png',
-    title: 'GreenPlan Mobile'
-  }
-];
-
-const galleryVideos = [
-  {
-    src: 'assets/projects/rp-helper-demo-1.mp4',
-    title: 'RP Helper Demo'
-  },
-  {
-    src: 'assets/projects/rp-helper-demo-2.mp4',
-    title: 'RP Helper Demo 2'
-  },
-  {
-    src: 'assets/projects/rp-helper-phone-demo.mp4',
-    title: 'RP Helper Phone Demo'
-  },
-  {
-    src: 'assets/projects/rp-helper-synthesia.mp4',
-    title: 'RP Helper Walkthrough'
-  }
-];
-
-const gameDevProjects = [
-  {
-    title: 'Your Game Jam Game',
-    type: 'GAME JAM / GAME DEVELOPMENT',
-    description: 'Add a short description of the game, what you built, and what you learned during the game jam.',
-    image: 'assets/projects/game-jam-game.png',
-    link: 'https://itch.io/',
-    linkText: 'PLAY THE GAME ↗'
-  },
-  {
-    title: 'Your Older Game',
-    type: 'PERSONAL GAME PROJECT',
-    description: 'Describe your older game, its gameplay, and your role in making it.',
-    image: 'assets/projects/old-game.png',
-    link: 'https://itch.io/',
-    linkText: 'VIEW PROJECT ↗'
-  }
-];
-
-const gameDevGallery = $('#gameDevGallery');
-
-if (gameDevGallery) {
-  gameDevGallery.innerHTML = gameDevProjects.map(game => `
-    <article class="game-dev-card">
-      <img
-        class="game-dev-image"
-        src="${game.image}"
-        alt="${game.title} screenshot"
-        loading="lazy"
-      >
-      <div class="game-dev-content">
-        <span class="game-dev-type">${game.type}</span>
-        <h3>${game.title}</h3>
-        <p>${game.description}</p>
-        <a
-          class="game-dev-link"
-          href="${game.link}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >${game.linkText}</a>
-      </div>
-    </article>
-  `).join('');
-}
-
-$('#photoGallery').innerHTML = galleryPhotos.map(item => `
-  <figure class="gallery-item">
-    <img src="${item.src}" alt="${item.title}" loading="lazy">
-    <figcaption>${item.title}</figcaption>
-  </figure>
-`).join('');
-
-$('#videoGallery').innerHTML = galleryVideos.map(item => `
-  <figure class="gallery-item">
-    <video controls preload="metadata">
-      <source src="${item.src}" type="video/mp4">
-    </video>
-    <figcaption>${item.title}</figcaption>
-  </figure>
-`).join('');
-
-
 $$('[data-project]').forEach(button => {
-  button.addEventListener('click', () => {
-    openProject(button.dataset.project);
-  });
+  button.addEventListener('click', () => openProject(button.dataset.project));
 });
 
 $('#modalClose').addEventListener('click', closeProject);
 
-modalBackdrop.addEventListener('click', e => {
-  if (e.target === modalBackdrop) {
-    closeProject();
-  }
+backdrop.addEventListener('click', e => {
+  if (e.target === backdrop) closeProject();
 });
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && !modalBackdrop.hidden) {
+  if (e.key === 'Escape' && !backdrop.hidden) {
     closeProject();
   }
 });
 
+// Copy email
+
 const copyEmail = $('#copyEmail');
+
 copyEmail.addEventListener('click', async () => {
-  const email = 'weihan5925c@gmail.com'; // Replace this with your real email.
+  const email = 'weihan5925@gmail.com'; // Replace this with your real email.
+
   try {
     await navigator.clipboard.writeText(email);
+
     copyEmail.innerHTML = 'EMAIL COPIED ✓';
-    setTimeout(() => copyEmail.innerHTML = 'COPY MY EMAIL <span>↗</span>', 1800);
+
+    setTimeout(() => {
+      copyEmail.innerHTML = 'COPY MY EMAIL <span>↗</span>';
+    }, 1800);
+
   } catch {
     window.location.href = `mailto:${email}`;
   }
 });
 
+// =====================================
+// DESIGN PROCESS PROGRESSION
+// =====================================
 
-function enableScrollAnimations() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
-  }
+const processItems = $$('.process-item');
 
-  if (!('IntersectionObserver' in window)) {
-    $$('.section, .gallery-item, .project-card').forEach(element => {
-      element.classList.add('visible');
-    });
-    return;
-  }
+const processProgressFill = $('#processProgressFill');
+const processProgressText = $('#processProgressText');
 
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
+if (processItems.length > 0) {
+
+  function updateProcess(index) {
+
+    // Highlight the current process step
+
+    processItems.forEach((item, i) => {
+
+      if (i === index) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
       }
+
     });
-  }, { threshold: 0.12 });
 
-  $$('.section, .gallery-item, .project-card').forEach(element => {
-    element.classList.add('scroll-reveal');
-    revealObserver.observe(element);
-  });
-}
+    // Update the progress bar
 
-enableScrollAnimations();
+    if (processProgressFill) {
 
+      const progress = ((index + 1) / processItems.length) * 100;
 
-const ambientBackdrop = document.querySelector('.ambient-backdrop');
+      processProgressFill.style.width = progress + '%';
 
-if (ambientBackdrop) {
-  let ticking = false;
+    }
 
-  function updateBackdrop() {
-    const scrollableHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
+    // Update the step number
 
-    const progress = scrollableHeight > 0
-      ? window.scrollY / scrollableHeight
-      : 0;
+    if (processProgressText) {
 
-      ambientBackdrop.style.setProperty(
-        '--scroll-progress',
-        progress.toFixed(3)
-      );
+      processProgressText.textContent =
+        'STEP 0' + (index + 1) + ' / 0' + processItems.length;
 
-    ticking = false;
+    }
+
   }
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateBackdrop);
-      ticking = true;
-    }
-  }, { passive: true });
+  // Start with the first step
 
-  window.addEventListener('mousemove', event => {
-    ambientBackdrop.style.setProperty('--mouse-x', `${event.clientX}px`);
-    ambientBackdrop.style.setProperty('--mouse-y', `${event.clientY}px`);
-  }, { passive: true });
+  updateProcess(0);
 
-  updateBackdrop();
+  // Check which process card is visible
+
+  if ('IntersectionObserver' in window) {
+
+    const processObserver = new IntersectionObserver(entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          const index = processItems.indexOf(entry.target);
+
+          if (index !== -1) {
+            updateProcess(index);
+          }
+
+        }
+
+      });
+
+    }, {
+      threshold: 0.2
+    });
+
+    // Watch all four process cards
+
+    processItems.forEach(item => {
+      processObserver.observe(item);
+    });
+
+  }
+
 }
