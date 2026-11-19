@@ -13,6 +13,17 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+
+
+  <div class="ambient-backdrop" aria-hidden="true">
+    <div class="ambient-grid"></div>
+    <div class="ambient-orb orb-one"></div>
+    <div class="ambient-orb orb-two"></div>
+    <div class="ambient-orb orb-three"></div>
+    <div class="ambient-glow"></div>
+  </div>
+
+
   <div class="grain" aria-hidden="true"></div>
   <header class="topbar">
     <a class="wordmark" href="#top" aria-label="Wei Han home">
@@ -24,6 +35,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="#work">WORK <span>01</span></a>
       <a href="#approach">PROCESS <span>02</span></a>
+      <a href="#game-dev">GAME DEV <span>03</span></a>
       <a href="#about">ABOUT <span>03</span></a>
       <a class="nav-contact" href="#contact">LET'S TALK ↗</a>
     </nav>
@@ -74,7 +86,7 @@
         <button class="project-card mint" data-project="greenplan" aria-label="Open GreenPlan case study">
           <div class="project-visual">
             <div class="project-top"><span>PROJECT_01</span><span>2026</span></div>
-            <div class="greenplan-art"><div class="gp-sun">✳</div><div class="gp-phone"><div class="phone-notch"></div><span class="phone-kicker">YOUR DAILY IMPACT</span><strong>Small steps.<br>Real change.</strong><div class="leaf-orb">✳</div><div class="phone-progress"><span></span></div><small>WEEKLY PROGRESS <b>72%</b></small></div><div class="gp-caption">GROW A BETTER<br>EVERYDAY ↗</div></div>
+            <div class="greenplan-art"><div class="gp-sun">✳</div><div class="gp-phone"><div class="phone-notch"></div><span class="phone-kicker">MY DAILY IMPACT</span><strong>Small steps.<br>Real change.</strong><div class="leaf-orb">✳</div><div class="phone-progress"><span></span></div><small>WEEKLY PROGRESS <b>72%</b></small></div><div class="gp-caption">GROW A BETTER<br>EVERYDAY ↗</div></div>
             <span class="project-open">↗</span>
           </div>
           <div class="project-info"><div><span class="project-type">MOBILE APP / UX CASE STUDY</span><h3>GreenPlan</h3><p>Make greener choices feel effortless.</p></div><span class="project-index">01</span></div>
@@ -100,6 +112,37 @@
         </button>
       </div>
       <div class="work-bottom"><span>03 PROJECTS / 03 DIFFERENT QUESTIONS</span><span>MORE EXPERIMENTS LOADING <span class="loading-bars"><i></i><i></i><i></i></span></span></div>
+    </section>
+    
+    <section class="section container" id="photos">
+      <div class="kicker">VISUAL ARCHIVE / 01</div>
+      <h2>Every frame, collected.</h2>
+
+      <div class="showcase-grid" id="photoGallery"></div>
+    </section>
+
+    <section class="section container" id="videos">
+      <div class="kicker">MOTION ARCHIVE / 02</div>
+      <h2>Made to move.</h2>
+
+      <div class="showcase-grid" id="videoGallery"></div>
+    </section>
+
+    <section class="game-dev-section section-wrap" id="game-dev">
+      <div class="section-heading">
+        <div>
+          <div class="section-index">03 / PAST GAME DEVELOPMENT</div>
+          <h2>Made for the <span class="accent-text">love of play.</span></h2>
+        </div>
+        <p>Game jams, late-night experiments, and games built from ideas into playable experiences. A look back at my journey into game development.</p>
+      </div>
+
+      <div class="game-dev-grid" id="gameDevGallery"></div>
+
+      <div class="work-bottom">
+        <span>GAME JAMS / PERSONAL PROJECTS</span>
+        <span>BUILT TO PLAY ✳</span>
+      </div>
     </section>
 
     <section class="approach-section" id="approach">
