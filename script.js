@@ -63,18 +63,6 @@ $$('#navLinks a').forEach(link => link.addEventListener('click', () => {
   menuToggle.textContent = '☰';
 }));
 
-// Play mode
-
-const playMode = $('#playMode');
-
-playMode.addEventListener('click', () => {
-  const active = document.body.classList.toggle('play-mode');
-
-  playMode.innerHTML = active
-    ? '<span>✧</span> TURN OFF PLAY MODE'
-    : '<span>✧</span> ACTIVATE PLAY MODE';
-});
-
 // Project modal
 
 const backdrop = $('#modalBackdrop');
