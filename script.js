@@ -1,41 +1,41 @@
 const projects = {
   greenplan: {
     id: '01', name: 'GreenPlan', type: 'MOBILE APP / UX CASE STUDY',
-    tagline: 'Make greener choices feel effortless.',
-    desc: 'A sustainability-focused experience that turns everyday eco-actions into approachable habits. Explore the journey from problem framing to interface decisions.',
-    outcome: 'Designed around clarity, small wins, and a low-friction daily loop.',
+    tagline: 'Build greener habits one small step at a time.',
+    desc: 'GreenPlan is a concept for people who want to make more sustainable choices. It brings everyday actions and personal progress into one place, so users can see how small changes add up.',
+    outcome: 'The design focuses on simple actions, clear progress and feedback that helps users stay motivated.',
     tags: ['UX strategy', 'Mobile UI', 'Prototyping'],
     screens: ['Discover', 'Take action', 'Track impact'], color: 'mint', glyph: '✳'
   },
   rphelper: {
     id: '02', name: 'RP-Helper', type: 'PRODUCT CONCEPT / INTERACTION DESIGN',
-    tagline: 'Less friction. More flow.',
-    desc: 'A utility concept built to make common tasks easier to understand and quicker to complete, with a focus on hierarchy, feedback, and predictable interactions.',
-    outcome: 'A clear interface model with task-focused flows and responsive feedback.',
+    tagline: 'A simpler way to get things done.',
+    desc: 'RP-Helper explores how a student-focused tool could bring useful tasks and information together. The interface is organised to help users find what they need without digging through too many screens.',
+    outcome: 'The concept uses clear navigation, focused task flows and feedback to show users what happens after each action.',
     tags: ['Interaction design', 'Design system', 'Usability'],
     screens: ['Overview', 'Task flow', 'Confirmation'], color: 'violet', glyph: '◈'
   },
   lab: {
     id: '03', name: 'Interface Lab', type: 'CREATIVE CODING / EXPERIMENT',
-    tagline: 'Small interactions, big personality.',
-    desc: 'A collection of interface experiments exploring motion, hover states, playful feedback, and the relationship between visual language and usability.',
-    outcome: 'A reusable playground for testing ideas before they become product patterns.',
+    tagline: 'Trying out the details that make interfaces feel responsive.',
+    desc: 'Interface Lab is where I test small ideas such as hover effects, motion and button feedback. It gives me a space to experiment and see how visual details affect the way an interface feels to use.',
+    outcome: 'A place to try ideas, learn what works and reuse useful patterns in future projects.',
     tags: ['Micro-interactions', 'Motion', 'CSS'],
     screens: ['Motion', 'Feedback', 'Play'], color: 'orange', glyph: '⌁'
   },
   pocketplan: {
     id: '04', name: 'PocketPlan', type: 'WEB APP / PERSONAL FINANCE',
-    tagline: 'Make money habits easier to understand.',
-    desc: 'A mobile-first personal budget tracker for recording income and expenses, setting a monthly spending limit, and seeing where money goes.',
-    outcome: 'A simple finance dashboard with clear totals, transaction categories, and locally saved data.',
+    tagline: 'A clearer view of everyday spending.',
+    desc: 'PocketPlan is a personal finance dashboard for keeping track of income and expenses. Users can record transactions, set a monthly budget and review their spending in one place.',
+    outcome: 'The dashboard brings balances, transactions and budget progress together. Data is saved locally in the browser.',
     tags: ['Dashboard UI', 'JavaScript', 'Responsive design'],
     screens: ['Overview', 'Add transaction', 'Monthly budget'], color: 'mint', glyph: '◉'
   },
   tabsplit: {
     id: '05', name: 'TabSplit', type: 'WEB APP / GROUP BILL SPLITTING',
-    tagline: 'Make splitting the bill less awkward.',
-    desc: 'A group bill-splitting tool that lets people add items, assign them to diners, and calculate each person’s share with service charge and tax.',
-    outcome: 'A clearer way to split shared and individual items, with a bill summary that can be copied into a group chat.',
+    tagline: 'Know what everyone needs to pay.',
+    desc: 'TabSplit helps a group work out a bill when people ordered different things. Add diners and items, assign each item and calculate each person’s share, including service charge and tax.',
+    outcome: 'The result is an itemised breakdown that makes it easier to check each person’s share and send the summary to the group.',
     tags: ['Product design', 'Vanilla JavaScript', 'SGD'],
     screens: ['Add people and items', 'Assign items', 'Split the total'], color: 'violet', glyph: '÷'
   }
