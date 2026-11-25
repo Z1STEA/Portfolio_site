@@ -22,6 +22,22 @@ const projects = {
     outcome: 'A reusable playground for testing ideas before they become product patterns.',
     tags: ['Micro-interactions', 'Motion', 'CSS'],
     screens: ['Motion', 'Feedback', 'Play'], color: 'orange', glyph: '⌁'
+  },
+  pocketplan: {
+    id: '04', name: 'PocketPlan', type: 'WEB APP / PERSONAL FINANCE',
+    tagline: 'Make money habits easier to understand.',
+    desc: 'A mobile-first personal budget tracker for recording income and expenses, setting a monthly spending limit, and seeing where money goes.',
+    outcome: 'A simple finance dashboard with clear totals, transaction categories, and locally saved data.',
+    tags: ['Dashboard UI', 'JavaScript', 'Responsive design'],
+    screens: ['Overview', 'Add transaction', 'Monthly budget'], color: 'mint', glyph: '◉'
+  },
+  tabsplit: {
+    id: '05', name: 'TabSplit', type: 'WEB APP / GROUP BILL SPLITTING',
+    tagline: 'Make splitting the bill less awkward.',
+    desc: 'A group bill-splitting tool that lets people add items, assign them to diners, and calculate each person’s share with service charge and tax.',
+    outcome: 'A clearer way to split shared and individual items, with a bill summary that can be copied into a group chat.',
+    tags: ['Product design', 'Vanilla JavaScript', 'SGD'],
+    screens: ['Add people and items', 'Assign items', 'Split the total'], color: 'violet', glyph: '÷'
   }
 };
 
@@ -33,16 +49,6 @@ const now = new Date();
 $('#year').textContent = now.getFullYear();
 $('#footerYear').textContent = `© ${now.getFullYear()}`;
 
-function updateClock() {
-  $('#clock').textContent = new Date().toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false
-  });
-}
-
-updateClock();
-setInterval(updateClock, 30000);
 
 // Mobile navigation
 
@@ -138,85 +144,17 @@ copyEmail.addEventListener('click', async () => {
 });
 
 // =====================================
-// DESIGN PROCESS PROGRESSION
-// =====================================
+/* Expand and collapse the past game-development projects */
+const gameDevGrid = document.querySelector('.game-dev-grid');
+const gameDevToggle = document.querySelector('#gameDevToggle');
 
-const processItems = $$('.process-item');
+if (gameDevGrid && gameDevToggle) {
+  gameDevToggle.addEventListener('click', () => {
+    const isExpanded = gameDevGrid.classList.toggle('is-expanded');
 
-const processProgressFill = $('#processProgressFill');
-const processProgressText = $('#processProgressText');
-
-if (processItems.length > 0) {
-
-  function updateProcess(index) {
-
-    // Highlight the current process step
-
-    processItems.forEach((item, i) => {
-
-      if (i === index) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-
-    });
-
-    // Update the progress bar
-
-    if (processProgressFill) {
-
-      const progress = ((index + 1) / processItems.length) * 100;
-
-      processProgressFill.style.width = progress + '%';
-
-    }
-
-    // Update the step number
-
-    if (processProgressText) {
-
-      processProgressText.textContent =
-        'STEP 0' + (index + 1) + ' / 0' + processItems.length;
-
-    }
-
-  }
-
-  // Start with the first step
-
-  updateProcess(0);
-
-  // Check which process card is visible
-
-  if ('IntersectionObserver' in window) {
-
-    const processObserver = new IntersectionObserver(entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          const index = processItems.indexOf(entry.target);
-
-          if (index !== -1) {
-            updateProcess(index);
-          }
-
-        }
-
-      });
-
-    }, {
-      threshold: 0.2
-    });
-
-    // Watch all four process cards
-
-    processItems.forEach(item => {
-      processObserver.observe(item);
-    });
-
-  }
-
+    gameDevToggle.setAttribute('aria-expanded', String(isExpanded));
+    gameDevToggle.innerHTML = isExpanded
+      ? 'SHOW LESS <span aria-hidden="true">−</span>'
+      : 'VIEW MORE GAME PROJECTS <span aria-hidden="true">＋</span>';
+  });
 }
