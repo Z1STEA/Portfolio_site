@@ -13,6 +13,8 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <canvas class="liquid-trail" aria-hidden="true"></canvas>
 
 
   <div class="ambient-backdrop" aria-hidden="true">
@@ -34,9 +36,10 @@
     <button class="mobile-menu" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <nav class="nav-links" id="navLinks">
       <a href="#work">WORK <span>01</span></a>
-      <a href="#approach">PROCESS <span>02</span></a>
-      <a href="#game-dev">GAME DEV <span>03</span></a>
-      <a href="#about">ABOUT <span>03</span></a>
+      <a href="#game-dev">GAME DEV <span>02</span></a>
+      <a href="#approach">PROCESS <span>03</span></a>
+      <a href="#about">ABOUT <span>04</span></a>
+      <a href="#background">BACKGROUND <span>05</span></a>
       <a class="nav-contact" href="#contact">LET'S TALK ↗</a>
     </nav>
   </header>
@@ -117,7 +120,7 @@
     <section class="game-dev-section section-wrap" id="game-dev">
       <div class="section-heading">
         <div>
-          <div class="section-index">03 / PAST GAME DEVELOPMENT</div>
+          <div class="section-index">02 / PAST GAME DEVELOPMENT</div>
           <h2>Made for the <span class="accent-text">love of play.</span></h2>
         </div>
         <p>Game jams, late-night experiments, and games built from ideas into playable experiences. A look back at my journey into game development.</p>
@@ -200,7 +203,7 @@
 
     <section class="approach-section" id="approach">
       <div class="section-wrap approach-inner">
-        <div class="section-index">02 / HOW I THINK</div>
+        <div class="section-index">03 / HOW I THINK</div>
         <div class="approach-title compact-approach-title">
           <h2>From idea<br>to <span class="accent-text">interface.</span></h2>
         </div>
@@ -235,22 +238,98 @@
 
 
     <section class="about-section section-wrap" id="about">
-      <div class="section-index">03 / A LITTLE ABOUT ME</div>
+      <div class="section-index">04 / A LITTLE ABOUT ME</div>
       <div class="about-layout"><div class="about-big"><span class="about-star">✳</span><h2>Curious<br>by <span class="accent-text">nature.</span><br>Intentional<br>by <span class="outline-text">design.</span></h2></div>
         <div class="about-copy"><div class="about-card"><span class="mono">A NOTE FROM THE DESIGNER ↘</span><p>I’m interested in the space between how something looks and how it works. I like exploring visual ideas, asking why a flow feels confusing, and turning those discoveries into interfaces with personality.</p><p>My goal is simple: make digital products feel a little more human.</p></div>
           <div class="skill-block"><span class="mono">CURRENT TOOLKIT</span><div class="skill-list"><span>✳ FIGMA</span><span>▧ PROTOTYPING</span><span>⌘ DESIGN SYSTEMS</span><span>▦ WIREFRAMING</span><span>◎ USABILITY</span><span>ϟ INTERACTION</span></div></div>
           <div class="about-note"><span class="note-star">✳</span><span>ALWAYS LEARNING.<br>ALWAYS MAKING.</span></div>
+          <a class="resume-download" href="assets/Wei-Han-Resume.pdf" download="Wei-Han-Resume.pdf">
+            <span class="resume-download-icon">↓</span>
+            <span><strong>DOWNLOAD RESUME</strong><small>PDF · FULL EXPERIENCE & EDUCATION</small></span>
+            <span class="resume-download-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-section section-wrap" id="background">
+      <div class="section-index">05 / THE BACKGROUND</div>
+      <div class="profile-heading">
+        <h2>More than<br><span class="accent-text">the pixels.</span></h2>
+        <p>A little context on the experience, education and milestones behind my work.</p>
+      </div>
+
+      <div class="profile-columns">
+        <div class="profile-column">
+          <div class="profile-subhead"><span>01</span><h3>EXPERIENCE</h3></div>
+          <article class="profile-entry">
+            <div class="profile-entry-top"><h4>Khoo Teck Puat Hospital</h4><span>DEC 2025 — PRESENT</span></div>
+            <p class="profile-role">Part-time / Customer Service Officer</p>
+            <p>Guide patients and visitors, handle visitor registration and support ward gantry operations in a healthcare environment.</p>
+          </article>
+          <article class="profile-entry">
+            <div class="profile-entry-top"><h4>Duke-NUS Medical School</h4><span>SEP 2024 — FEB 2025</span></div>
+            <p class="profile-role">Intern / Game Developer</p>
+            <p>Contributed to game-based and interactive learning projects, including VR medical training, a pixel-art hospital game and 3D anatomy learning assets.</p>
+          </article>
+          <article class="profile-entry">
+            <div class="profile-entry-top"><h4>Abbott Manufacturing Singapore</h4><span>MAY 2022 — NOV 2022</span></div>
+            <p class="profile-role">Intern / Assistant QA Officer</p>
+            <p>Supported quality assurance work involving laboratory testing of food products and medical consumables, as well as line technician duties.</p>
+          </article>
+        </div>
+
+        <div class="profile-column">
+          <div class="profile-subhead"><span>02</span><h3>EDUCATION</h3></div>
+          <article class="profile-entry">
+            <div class="profile-entry-top"><h4>Republic Polytechnic</h4><span>APR 2025 — PRESENT</span></div>
+            <p class="profile-role">Diploma in Information Technology</p>
+          </article>
+          <article class="profile-entry">
+            <div class="profile-entry-top"><h4>ITE College Central</h4><span>APR 2023 — MAR 2025</span></div>
+            <p class="profile-role">Higher Nitec in Immersive Application and Game</p>
+          </article>
+          <article class="profile-entry">
+            <div class="profile-entry-top"><h4>ITE College East</h4><span>JAN 2021 — NOV 2022</span></div>
+            <p class="profile-role">Nitec in Chemical Process Technology</p>
+          </article>
+          <article class="profile-entry">
+            <div class="profile-entry-top"><h4>Hillgrove Secondary School</h4><span>2017 — 2020</span></div>
+            <p class="profile-role">Normal (Technical) Level</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="profile-achievements">
+        <div class="profile-subhead"><span>03</span><h3>ACHIEVEMENTS</h3></div>
+        <div class="achievement-list">
+          <div><strong>ITE PRAISE</strong><span>GOLD</span></div>
+          <div><strong>EAGLES Award</strong><span>2024</span></div>
+          <div><strong>NPCC</strong><span>Staff Sergeant</span></div>
         </div>
       </div>
     </section>
 
     <section class="contact-section" id="contact"><div class="section-wrap contact-inner">
-      <div class="contact-top"><span class="section-index">04 / YOUR TURN</span><span class="mono">HAVE A GOOD ONE IN MIND?</span></div>
+      <div class="contact-top"><span class="section-index">06 / YOUR TURN</span><span class="mono">HAVE A GOOD ONE IN MIND?</span></div>
       <h2>Let's make<br><span class="outline-text">something</span><br><span class="accent-text">matter.</span></h2>
       <div class="contact-bottom"><p>Have a project, an opportunity, or a weird idea worth exploring? My inbox is open.</p><button class="contact-button" id="copyEmail">COPY MY EMAIL <span>↗</span></button></div>
       <div class="footer-line"><a href="#top" class="footer-logo">W<span>✳</span> / WEI HAN</a><span>DESIGNED WEI HAN, UIUX PORTFOLIO.</span><div class="socials"><a href="https://github.com/Z1STEA" target="_blank" rel="noreferrer" aria-label="GitHub">GtHb</a><a href="https://www.linkedin.com/in/teo-wei-han-3a6594288/" target="_blank" rel="noreferrer" aria-label="LinkedIn">LkIn</a><a href="" target="_blank" rel="noreferrer" aria-label="Dribbble">???</a></div><span id="footerYear"></span></div>
     </div></section>
   </main>
+
+  <nav class="chapter-rail" aria-label="Page chapters">
+    <span class="chapter-rail-label">ON THIS PAGE</span>
+    <div class="chapter-rail-track" aria-hidden="true"><span id="chapterRailFill"></span></div>
+    <a href="#work" data-chapter="work" aria-label="01 Selected work" aria-current="location"><i>01</i><span>WORK</span></a>
+    <a href="#game-dev" data-chapter="game-dev" aria-label="02 Game development"><i>02</i><span>GAME DEV</span></a>
+    <a href="#approach" data-chapter="approach" aria-label="03 Design process"><i>03</i><span>PROCESS</span></a>
+    <a href="#about" data-chapter="about" aria-label="04 About"><i>04</i><span>ABOUT</span></a>
+    <a href="#background" data-chapter="background" aria-label="05 Background"><i>05</i><span>BACKGROUND</span></a>
+    <a href="#contact" data-chapter="contact" aria-label="06 Contact"><i>06</i><span>CONTACT</span></a>
+    <span class="chapter-rail-current" id="chapterRailCurrent" aria-live="polite">01 / WORK</span>
+  </nav>
+  <a class="back-to-top" href="#top" aria-label="Back to top">↑ <span>BACK TO TOP</span></a>
 
   <div class="modal-backdrop" id="modalBackdrop" hidden>
     <section class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
