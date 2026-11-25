@@ -46,8 +46,11 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 const now = new Date();
 
-$('#year').textContent = now.getFullYear();
-$('#footerYear').textContent = `© ${now.getFullYear()}`;
+const yearLabel = $('#year');
+if (yearLabel) yearLabel.textContent = now.getFullYear();
+
+const footerYear = $('#footerYear');
+if (footerYear) footerYear.textContent = `© ${now.getFullYear()}`;
 
 
 // Mobile navigation
@@ -417,3 +420,17 @@ window.addEventListener('scroll', () => {
     backTopTicking = false;
   });
 }, { passive: true });
+
+
+// Hide the floating back-to-top control while the contact area is on screen,
+// so it never competes with or covers the main contact button.
+const contactSection = document.querySelector('#contact');
+if (contactSection && backToTop && 'IntersectionObserver' in window) {
+  const contactVisibilityObserver = new IntersectionObserver(entries => {
+    const contactIsVisible = entries.some(entry => entry.isIntersecting);
+    backToTop.classList.toggle('is-contact-visible', contactIsVisible);
+  }, {
+    threshold: 0.08
+  });
+  contactVisibilityObserver.observe(contactSection);
+}
