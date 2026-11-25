@@ -252,3 +252,13 @@
   }
 }
 
+
+/* HERO: keep the title artwork and ticker completely still. */
+.hero .scroll-indicator span,
+.hero-art .orbit-one,
+.hero-art .orbit-two,
+.hero-art .planet-main,
+.hero-art .planet-small,
+.hero + .ticker .ticker-track {
+  animation: none !important;
+}
